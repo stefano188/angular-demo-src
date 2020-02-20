@@ -1,0 +1,15 @@
+
+<div class="container">
+    
+    <!-- 2 ways binding without ngModel -->
+    <div>
+        <input type="text" [value]="value" (input)="updateValue($event.target.value)" (keyup.enter)="onKeyUp()" >
+        2 ways binding without ngModel: {{ value }}
+    </div>
+    
+    <div>
+        <input type="text" [(ngModel)]="valueTwo" (keyup.enter)="onKeyUpTwo()">
+        2 ways binding with ngModel: {{ valueTwo }}
+    </div>
+    
+</div>

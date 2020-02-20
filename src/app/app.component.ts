@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-demo-src';
+  link = 1;
+  
+  toggleActive(n: number) {
+    this.link = n;
+  }
 }
