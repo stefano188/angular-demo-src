@@ -6,10 +6,15 @@
         <input type="text" [value]="value" (input)="updateValue($event.target.value)" (keyup.enter)="onKeyUp()" >
         2 ways binding without ngModel: {{ value }}
     </div>
-    
+    <br/>
     <div>
         <input type="text" [(ngModel)]="valueTwo" (keyup.enter)="onKeyUpTwo()">
         2 ways binding with ngModel: {{ valueTwo }}
     </div>
-    
+    <br/>
+    <div>
+        <custom-input [(value)]="customValue"></custom-input>
+        2 ways binding custom input w/o ngModel: {{ customValue }}
+    </div>
+
 </div>

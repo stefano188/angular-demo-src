@@ -6,13 +6,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
-import { DemoInputComponent } from './demo-input/demo-input.component';
+import { DemoInputComponent } from './components/demo-input/demo-input.component';
+import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
+import { SummaryPipe } from './components/summary.pipe';
+import { CustomInputComponent } from './components/custom-input/custom-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DemoInputComponent
+    DemoInputComponent,
+    PipeDemoComponent,
+    SummaryPipe,
+    CustomInputComponent
   ],
   imports: [
     BrowserModule,
@@ -20,10 +26,13 @@ import { DemoInputComponent } from './demo-input/demo-input.component';
     FormsModule,
     RouterModule.forRoot([
       {
-        path: '', component: HomeComponent
+        path: 'demo-pipe', component: PipeDemoComponent
       },
       {
         path: 'demo-input', component: DemoInputComponent
+      },
+      {
+        path: '', component: PipeDemoComponent
       }
     ])
   ],

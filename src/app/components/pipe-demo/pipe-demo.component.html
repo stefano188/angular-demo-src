@@ -1,0 +1,8 @@
+
+<div class="container">
+    students: {{ pipeObj.students | number }} <br/>
+    rating: {{ pipeObj.rating | number:'1.1-2' }} <br/>
+    price: {{ pipeObj.price | currency:'EUR':true:'3.1-2' }} <br/>
+    releaseDate: {{ pipeObj.releaseDate | date }} <br/><br/>
+    title: {{ pipeObj.title | summary:100 }} <br/>
+</div>

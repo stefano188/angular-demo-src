@@ -11,6 +11,7 @@ export class DemoInputComponent  {
   @Output() valueChange = new EventEmitter();
 
   valueTwo = '';
+  customValue = '';
 
   updateValue(value) {
     this.value = value;
