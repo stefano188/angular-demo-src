@@ -1,0 +1,29 @@
+
+<div class="container">
+    <h2>Products</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products">
+                <td>{{ p.id }}</td>
+                <td>{{ p.title }}</td>
+                <td>{{ p.price }}</td>
+                <td>{{ p.stock }}</td>
+                <td>
+                    <stock-status 
+                        [stock]="p.stock" 
+                        [productId]="p.id"
+                        (stockValueChange)="changeStockValue($event)"></stock-status>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

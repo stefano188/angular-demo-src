@@ -10,6 +10,10 @@ import { DemoInputComponent } from './components/demo-input/demo-input.component
 import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 import { SummaryPipe } from './components/summary.pipe';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
+import { CustomOutputComponent } from './components/output/custom-output/custom-output.component';
+import { DemoOutputComponent } from './components/output/demo-output/demo-output.component';
+import { StockComponent } from './components/output/stock/stock.component';
+import { StockStatusComponent } from './components/output/stock-status/stock-status.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { CustomInputComponent } from './components/custom-input/custom-input.com
     DemoInputComponent,
     PipeDemoComponent,
     SummaryPipe,
-    CustomInputComponent
+    CustomInputComponent,
+    CustomOutputComponent,
+    DemoOutputComponent,
+    StockComponent,
+    StockStatusComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +40,12 @@ import { CustomInputComponent } from './components/custom-input/custom-input.com
         path: 'demo-input', component: DemoInputComponent
       },
       {
+        path: 'demo-output', component: DemoOutputComponent
+      },
+      {
+        path: 'stock-component', component: StockComponent
+      },
+      {
         path: '', component: PipeDemoComponent
       }
     ])
@@ -40,3 +54,4 @@ import { CustomInputComponent } from './components/custom-input/custom-input.com
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

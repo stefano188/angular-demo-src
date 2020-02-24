@@ -19,6 +19,22 @@
             data-toggle="pill"  
             role="tab"  
             aria-selected="false">Demo Input</a>
+        <a 
+            (click)="toggleActive(3)"
+            routerLink="demo-output" 
+            class="nav-link" 
+            [class.active]="link === 3"
+            data-toggle="pill"  
+            role="tab"  
+            aria-selected="false">Demo Output</a>
+          <a 
+            (click)="toggleActive(4)"
+            routerLink="stock-component" 
+            class="nav-link" 
+            [class.active]="link === 4"
+            data-toggle="pill"  
+            role="tab"  
+            aria-selected="false">Demo Stock (Output)</a>
         <!-- <a class="nav-link" data-toggle="pill"  role="tab"  aria-selected="false">Messages</a>
         <a class="nav-link" data-toggle="pill"  role="tab" aria-selected="false">Settings</a> -->
       </div>
