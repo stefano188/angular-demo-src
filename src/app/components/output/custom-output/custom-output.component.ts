@@ -10,21 +10,25 @@ export class CustomOutputComponent {
   @Input('value') value = '';
   @Output('value') valueChange = new EventEmitter();
 
-  @Output('click') click = new EventEmitter();
-  @Output('focus') focus = new EventEmitter();
-
-  onClick(value: string) {
+  @Output('change') change = new EventEmitter();
+  
+  onClick() {
     console.log('CustomOutputComponent onClick emitter');
-    let otherValue = value.toUpperCase();
-    this.click.emit(
-      {
-        clickValue : value,
-        otherValue : otherValue
-      });
+    let otherValue = this.value ? this.value.toUpperCase() : this.value;
+    this.emitValue(otherValue);
   }
 
-  onFocus() {
-    console.log('CustomOutputComponent onFocus emitter');
-    this.focus.emit();
+  onKeyUp() {
+    console.log('onKeyUp ', this.value);
+    let otherValue = this.value ? this.value.toLowerCase() : this.value;
+    this.emitValue(otherValue);
+  }
+
+  private emitValue(otherValue) {
+    this.change.emit(
+      {
+        clickValue : this.value,
+        otherValue : otherValue
+      });
   }
 }

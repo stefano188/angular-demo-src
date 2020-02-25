@@ -1,2 +1,2 @@
 
-<input type="text" (click)="onClick($event.target.value)" (focus)="onFocus()">
+<input type="text" [(ngModel)]="value" (click)="onClick()" (keyup.enter)="onKeyUp()" >

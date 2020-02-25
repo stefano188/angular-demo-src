@@ -1,5 +1,6 @@
 
-<custom-output [(value)]="value" (click)="onDemoOutputClick($event)" (focus)="onDemoOutputFocus()"></custom-output>
+<p>write something in textfield, then click to show uppercase or press enter to show lowercase</p>
+<custom-output (change)="onDemoOutputClick($event)"></custom-output>
 <div>
     {{ value }}
 </div>

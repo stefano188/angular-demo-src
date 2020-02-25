@@ -15,7 +15,4 @@ export class DemoOutputComponent {
     console.log('other value', this.value);
   }
 
-  onDemoOutputFocus() {
-    console.log("DemoOutputComponent onFocus");
-  }
 }

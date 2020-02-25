@@ -3,3 +3,25 @@
 https://medium.com/@ofirrifo/custom-angular-component-using-two-way-data-binding-aka-banana-in-a-box-syntax-9eb06b8cfb09
 https://dzone.com/articles/understanding-output-and-eventemitter-in-angular
 
+Consumer component
+    template: <producer-component (outputProp)="consumerMethodCall($event)" >
+        (outputProp): is the @Output properties declared in producer component
+        "consumerMethodCall": is the method called in consumer component listening to the outputProp 
+        $event param: is the output parameter emitted by the producer component
+
+
+Producer component
+    template: component invoked by consumer.
+        e.g. <input type="text" (click)="methodCalled()" (keyup.enter)="onKeyUp()" >
+        (click) event raised when clicking the input component
+        (keyup.enter) event raised when pressing enter on the input component 
+        "methodCalled()": method called when input is clicked. Here producer can emit the output property.
+        "onKeyUp()": method called when enter on the input field is pressed. Here producer can emit the output property.
+        See DemoOutputComponent, StockComponent
+
+    producer.ts
+        @Output('change') change = new EventEmitter();
+        'change' is the output property emitted by the producer component.
+        "methodCalled()": is the method that emit the output property.
+        See CustomOutputComponent, StockStatusComponent
+
