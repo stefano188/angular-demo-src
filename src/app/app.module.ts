@@ -19,6 +19,7 @@ import { DemoSwitchCaseComponent } from './components/directives/demo-switch-cas
 import { InputFormatDirective } from './components/directives/input-format.directive';
 import { DemoTemplateComponent } from './components/directives/demo-template/demo-template.component';
 import { StringRangeDirective } from './components/directives/string-range.directive';
+import { TemplateDrivenFormComponent } from './components/form/template-driven-form/template-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { StringRangeDirective } from './components/directives/string-range.direc
     DemoSwitchCaseComponent,
     InputFormatDirective,
     DemoTemplateComponent,
-    StringRangeDirective
+    StringRangeDirective,
+    TemplateDrivenFormComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,9 @@ import { StringRangeDirective } from './components/directives/string-range.direc
       },
       {
         path: 'demo-directive', component: DemoDirectiveComponent
+      },
+      {
+        path: 'template-driven-form', component: TemplateDrivenFormComponent
       },
       {
         path: '', component: PipeDemoComponent

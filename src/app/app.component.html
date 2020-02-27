@@ -43,6 +43,14 @@
             data-toggle="pill"  
             role="tab"  
             aria-selected="false">Demo Directive</a>
+          <a 
+            (click)="toggleActive(6)"
+            routerLink="template-driven-form" 
+            class="nav-link" 
+            [class.active]="link === 6"
+            data-toggle="pill"  
+            role="tab"  
+            aria-selected="false">Template Driven Form</a>
         <!-- <a class="nav-link" data-toggle="pill"  role="tab"  aria-selected="false">Messages</a>
         <a class="nav-link" data-toggle="pill"  role="tab" aria-selected="false">Settings</a> -->
       </div>

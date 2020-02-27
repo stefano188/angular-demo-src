@@ -1,4 +1,5 @@
 
+******************************************
 # two ways binding [()]
 https://medium.com/@ofirrifo/custom-angular-component-using-two-way-data-binding-aka-banana-in-a-box-syntax-9eb06b8cfb09
 https://dzone.com/articles/understanding-output-and-eventemitter-in-angular
@@ -25,3 +26,23 @@ Producer component
         "methodCalled()": is the method that emit the output property.
         See CustomOutputComponent, StockStatusComponent
 
+
+******************************************
+# template driven form
+
+<input 
+    ngModel
+    name="firstName"
+
+    #firstName="ngModel"
+    (change)="log(firstName)"
+
+    id="firstName" 
+    ...>
+ngModel: angular creates a 'form control object' for this input field under the hood. 
+    'Form control object' is used for validation
+name: 'name' attribute is mandatory if ngModel is applied, 
+    because it is needed by the form control object to refer to the input field.
+#firstName="ngModel": apply a template variable #firstName bound to ngModel directive 
+    then passed to (change) event
+(change)="log(firstName)": (change) event bound to log methd that receive the template variable referred to the input field
