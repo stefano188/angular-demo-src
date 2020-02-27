@@ -1,0 +1,20 @@
+
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a routerLink="#" class="nav-link" [class.active]="viewMode == 'map'" (click)="viewMode = 'map'">Map View</a>
+    </li>
+    <li class="nav-item" [class.active]="viewMode == 'list'">
+        <a routerLink="#" class="nav-link" [class.active]="viewMode == 'list'" (click)="viewMode = 'list'">List View</a>
+    </li>
+</ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">
+        Map View Content
+    </div>
+    <div *ngSwitchCase="'list'">
+        List View Content
+    </div>
+    <div *ngSwitchDefault>
+        Otherwise Content
+    </div>
+</div>

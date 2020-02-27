@@ -6,14 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
-import { DemoInputComponent } from './components/demo-input/demo-input.component';
+import { DemoInputComponent } from './components/input/demo-input/demo-input.component';
 import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 import { SummaryPipe } from './components/summary.pipe';
-import { CustomInputComponent } from './components/custom-input/custom-input.component';
+import { CustomInputComponent } from './components/input/custom-input/custom-input.component';
 import { CustomOutputComponent } from './components/output/custom-output/custom-output.component';
 import { DemoOutputComponent } from './components/output/demo-output/demo-output.component';
 import { StockComponent } from './components/output/stock/stock.component';
 import { StockStatusComponent } from './components/output/stock-status/stock-status.component';
+import { DemoDirectiveComponent } from './components/directives/demo-directive/demo-directive.component';
+import { DemoSwitchCaseComponent } from './components/directives/demo-switch-case/demo-switch-case.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { StockStatusComponent } from './components/output/stock-status/stock-sta
     CustomOutputComponent,
     DemoOutputComponent,
     StockComponent,
-    StockStatusComponent
+    StockStatusComponent,
+    DemoDirectiveComponent,
+    DemoSwitchCaseComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +48,9 @@ import { StockStatusComponent } from './components/output/stock-status/stock-sta
       },
       {
         path: 'stock-component', component: StockComponent
+      },
+      {
+        path: 'demo-directive', component: DemoDirectiveComponent
       },
       {
         path: '', component: PipeDemoComponent

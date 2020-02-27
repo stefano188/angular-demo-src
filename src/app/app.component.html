@@ -35,6 +35,14 @@
             data-toggle="pill"  
             role="tab"  
             aria-selected="false">Demo Stock (Output)</a>
+          <a 
+            (click)="toggleActive(5)"
+            routerLink="demo-directive" 
+            class="nav-link" 
+            [class.active]="link === 5"
+            data-toggle="pill"  
+            role="tab"  
+            aria-selected="false">Demo Directive</a>
         <!-- <a class="nav-link" data-toggle="pill"  role="tab"  aria-selected="false">Messages</a>
         <a class="nav-link" data-toggle="pill"  role="tab" aria-selected="false">Settings</a> -->
       </div>

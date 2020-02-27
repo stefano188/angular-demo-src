@@ -16,5 +16,15 @@
         <custom-input [(value)]="customValue"></custom-input>
         2 ways binding custom input w/o ngModel: {{ customValue }}
     </div>
+    <br/>
+    <div>
+        <input type="text" #var1 (keyup)="0">
+        template variable name (toUpperCase): {{ var1.value.toUpperCase() }}
+    </div>
+    <br/>
+    <div>
+        <input type="text" #var2 (keyup)="onTemplateVarChange(var2.value)">
+        template variable bound to component variable (toLowerCase): {{ templateInputVariable }}
+    </div>
 
 </div>

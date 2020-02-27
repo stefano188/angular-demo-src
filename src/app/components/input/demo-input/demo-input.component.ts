@@ -12,6 +12,8 @@ export class DemoInputComponent  {
 
   valueTwo = '';
   customValue = '';
+  
+  templateInputVariable = '';
 
   updateValue(value) {
     this.value = value;
@@ -26,5 +28,7 @@ export class DemoInputComponent  {
     console.log('with ngModel emitting', this.valueTwo);
   }
 
+  onTemplateVarChange(inputVal: string) {
+    this.templateInputVariable = inputVal.toLowerCase();
+  }
 }
-
