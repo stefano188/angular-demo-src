@@ -16,6 +16,9 @@ import { StockComponent } from './components/output/stock/stock.component';
 import { StockStatusComponent } from './components/output/stock-status/stock-status.component';
 import { DemoDirectiveComponent } from './components/directives/demo-directive/demo-directive.component';
 import { DemoSwitchCaseComponent } from './components/directives/demo-switch-case/demo-switch-case.component';
+import { InputFormatDirective } from './components/directives/input-format.directive';
+import { DemoTemplateComponent } from './components/directives/demo-template/demo-template.component';
+import { StringRangeDirective } from './components/directives/string-range.directive';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { DemoSwitchCaseComponent } from './components/directives/demo-switch-cas
     StockComponent,
     StockStatusComponent,
     DemoDirectiveComponent,
-    DemoSwitchCaseComponent
+    DemoSwitchCaseComponent,
+    InputFormatDirective,
+    DemoTemplateComponent,
+    StringRangeDirective
   ],
   imports: [
     BrowserModule,

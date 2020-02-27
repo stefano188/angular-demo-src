@@ -1,0 +1,13 @@
+
+<div class="container" >
+    <input type="text" #i (keyup)="writtenText = i.value">
+    <br/><br/>
+    <div *ngIf="writtenText.length > 0; then showText else noText">
+    </div>
+    <ng-template #showText>
+        You wrote: {{ writtenText }}
+    </ng-template>
+    <ng-template #noText>
+        *** Text empty ***
+    </ng-template>
+</div>

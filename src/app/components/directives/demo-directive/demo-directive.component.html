@@ -1,18 +1,20 @@
 <fieldset class="border p-2">
     <legend class="w-auto">ngIf and ngTemplate to show or hide piece of page</legend>
-    <div class="container" >
-        <input type="text" #i (keyup)="writtenText = i.value">
-        <br/><br/>
-        <div *ngIf="writtenText.length > 0; then showText else noText">
-        </div>
-        <ng-template #showText>
-            You wrote: {{ writtenText }}
-        </ng-template>
-        <ng-template #noText>
-            *** Text empty ***
-        </ng-template>
-    </div>
+    <demo-template></demo-template>
 </fieldset>
+<br/>
+
+<fieldset class="border p-2">
+    <legend class="w-auto">Custom Directive</legend>
+    <input type="text" appInputFormat > (custom directive uppercase)
+    <br/>
+    <input type="text" [appInputFormat]="'lowercase'" > (custom directive lowercase)
+    <br/>
+    <input type="number" #fromVal placeholder="fromIndex" (keyup)="0">
+    <input type="number" #toVal placeholder="toIndex" (keyup)="0">
+    <input type="text" appStringRange [fromIndex]="fromVal.value" [toIndex]="toVal.value" > (custom directive string substr)
+</fieldset>
+<br/>
 
 <fieldset class="border p-2">
     <legend class="w-auto">ngSwitch and *ngSwitchCase</legend>
