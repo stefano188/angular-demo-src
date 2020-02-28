@@ -46,3 +46,12 @@ name: 'name' attribute is mandatory if ngModel is applied,
 #firstName="ngModel": apply a template variable #firstName bound to ngModel directive 
     then passed to (change) event
 (change)="log(firstName)": (change) event bound to log methd that receive the template variable referred to the input field
+
+
+******************************************
+event filtering
+https://angular.io/guide/user-input
+
+(keyup)
+(keyup.enter)
+...

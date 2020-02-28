@@ -8,6 +8,16 @@ import { NgForm } from '@angular/forms';
 })
 export class TemplateDrivenFormComponent {
 
+  contactMethods = [
+    { id: 1, name: 'Email' },
+    { id: 2, name: 'Phone' },
+  ];
+
+  otherContacts = [
+    { id: 3, name: 'Hangout' },
+    { id: 4, name: 'Skype' },
+  ];
+
   log(firstName) {
     console.log('firstName change', firstName);
   }

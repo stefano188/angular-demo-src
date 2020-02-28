@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { InputFormatDirective } from './components/directives/input-format.direc
 import { DemoTemplateComponent } from './components/directives/demo-template/demo-template.component';
 import { StringRangeDirective } from './components/directives/string-range.directive';
 import { TemplateDrivenFormComponent } from './components/form/template-driven-form/template-driven-form.component';
+import { SignupFormComponent } from './components/form/signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -38,12 +39,14 @@ import { TemplateDrivenFormComponent } from './components/form/template-driven-f
     InputFormatDirective,
     DemoTemplateComponent,
     StringRangeDirective,
-    TemplateDrivenFormComponent
+    TemplateDrivenFormComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {
         path: 'demo-pipe', component: PipeDemoComponent
@@ -62,6 +65,9 @@ import { TemplateDrivenFormComponent } from './components/form/template-driven-f
       },
       {
         path: 'template-driven-form', component: TemplateDrivenFormComponent
+      },
+      {
+        path: 'reactive-form', component: SignupFormComponent
       },
       {
         path: '', component: PipeDemoComponent

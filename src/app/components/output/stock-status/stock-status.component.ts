@@ -15,12 +15,10 @@ export class StockStatusComponent implements OnChanges {
   color: string;
 
   ngOnChanges() {
-    console.log('ngOnChanges productId', this.productId);
     this.color = this.stock > 10 ? 'green' : 'red';
   }
 
   stockValueChanged() {
-    console.log('updateStockValue', this.updateStockValue);
     this.stockValueChange.emit({
       id: this.productId,
       updatestockvalue: this.updateStockValue
