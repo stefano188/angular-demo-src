@@ -12,3 +12,7 @@ container {
 .form-control.ng-touched.ng-invalid {
     border: 2px solid red;
 }
+
+.border {
+    max-width: 70%;
+}

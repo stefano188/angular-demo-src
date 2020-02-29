@@ -10,13 +10,28 @@ import { UsernameValidators } from './username.validators';
 export class SignupFormComponent  {
 
   form = new FormGroup({
-    username: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-      UsernameValidators.cannotContainSpace
-    ]),
-    password: new FormControl('', Validators.required)
+    username: new FormControl('', 
+      [
+        Validators.required,
+        Validators.minLength(3),
+        UsernameValidators.cannotContainSpace
+      ], 
+      UsernameValidators.shouldBeUnique),
+    password: new FormControl('', Validators.required),
+    info: new FormGroup({
+      identity: new FormControl(),
+      drivingLicense: new FormControl()
+    })
   })
+
+  login() {
+    this.form.setErrors({
+      invalidLogin: true
+    });
+    this.form.get('info').setErrors({
+      message: 'identity or driving license required'
+    })
+  }
 
   get username() {
     return this.form.get('username');
@@ -24,5 +39,17 @@ export class SignupFormComponent  {
 
   get passowrd() {
     return this.form.get('password');
+  }
+
+  get info() {
+    return this.form.get('info');
+  }
+
+  get identity() {
+    return this.form.get('info.identity');
+  }
+
+  get drivingLicense() {
+    return this.form.get('info.drivingLicense');
   }
 }

@@ -59,6 +59,22 @@
             data-toggle="pill"  
             role="tab"  
             aria-selected="false">Reactive Form (SignUp)</a>
+          <a 
+            (click)="toggleActive(8)"
+            routerLink="demo-form-array" 
+            class="nav-link" 
+            [class.active]="link === 8"
+            data-toggle="pill"  
+            role="tab"  
+            aria-selected="false">Form Array Demo</a>
+          <a 
+            (click)="toggleActive(9)"
+            routerLink="demo-change-password" 
+            class="nav-link" 
+            [class.active]="link === 9"
+            data-toggle="pill"  
+            role="tab"  
+            aria-selected="false">Change Password Demo</a>
         <!-- <a class="nav-link" data-toggle="pill"  role="tab"  aria-selected="false">Messages</a>
         <a class="nav-link" data-toggle="pill"  role="tab" aria-selected="false">Settings</a> -->
       </div>

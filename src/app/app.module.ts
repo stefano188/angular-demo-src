@@ -21,6 +21,8 @@ import { DemoTemplateComponent } from './components/directives/demo-template/dem
 import { StringRangeDirective } from './components/directives/string-range.directive';
 import { TemplateDrivenFormComponent } from './components/form/template-driven-form/template-driven-form.component';
 import { SignupFormComponent } from './components/form/signup-form/signup-form.component';
+import { DemoFormArrayComponent } from './components/form/demo-form-array/demo-form-array.component';
+import { DemoChangePasswordComponent } from './components/form/demo-change-password/demo-change-password.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { SignupFormComponent } from './components/form/signup-form/signup-form.c
     DemoTemplateComponent,
     StringRangeDirective,
     TemplateDrivenFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    DemoFormArrayComponent,
+    DemoChangePasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +72,12 @@ import { SignupFormComponent } from './components/form/signup-form/signup-form.c
       },
       {
         path: 'reactive-form', component: SignupFormComponent
+      },
+      {
+        path: 'demo-form-array', component: DemoFormArrayComponent
+      },
+      {
+        path: 'demo-change-password', component: DemoChangePasswordComponent
       },
       {
         path: '', component: PipeDemoComponent
