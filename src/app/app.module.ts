@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,8 @@ import { TemplateDrivenFormComponent } from './components/form/template-driven-f
 import { SignupFormComponent } from './components/form/signup-form/signup-form.component';
 import { DemoFormArrayComponent } from './components/form/demo-form-array/demo-form-array.component';
 import { DemoChangePasswordComponent } from './components/form/demo-change-password/demo-change-password.component';
+import { DemoHttpComponent } from './components/demo-http/demo-http.component';
+import { DemoHttpService } from './services/demo-http.service';
 
 @NgModule({
   declarations: [
@@ -44,13 +47,16 @@ import { DemoChangePasswordComponent } from './components/form/demo-change-passw
     TemplateDrivenFormComponent,
     SignupFormComponent,
     DemoFormArrayComponent,
-    DemoChangePasswordComponent
+    DemoChangePasswordComponent,
+    DemoHttpComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: 'demo-pipe', component: PipeDemoComponent
@@ -80,11 +86,16 @@ import { DemoChangePasswordComponent } from './components/form/demo-change-passw
         path: 'demo-change-password', component: DemoChangePasswordComponent
       },
       {
+        path: 'demo-http', component: DemoHttpComponent
+      },
+      {
         path: '', component: PipeDemoComponent
       }
     ])
   ],
-  providers: [],
+  providers: [
+    DemoHttpService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

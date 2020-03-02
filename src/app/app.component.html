@@ -75,6 +75,14 @@
             data-toggle="pill"  
             role="tab"  
             aria-selected="false">Change Password Demo</a>
+          <a 
+            (click)="toggleActive(10)"
+            routerLink="demo-http" 
+            class="nav-link" 
+            [class.active]="link === 10"
+            data-toggle="pill"  
+            role="tab"  
+            aria-selected="false">Http Demo</a>
         <!-- <a class="nav-link" data-toggle="pill"  role="tab"  aria-selected="false">Messages</a>
         <a class="nav-link" data-toggle="pill"  role="tab" aria-selected="false">Settings</a> -->
       </div>
