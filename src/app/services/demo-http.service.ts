@@ -12,7 +12,7 @@ import { NotFound } from '../models/not-found';
 export class DemoHttpService {
 
   private url = 'https://jsonplaceholder.typicode.com/posts';
-  private fakeDeleteUrl = 'https://jsonplaceholder.typicode.com/posts/345';
+  private fakeurl = 'https://jsonplaceholder.typicode.com/posts/345';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -35,10 +35,18 @@ export class DemoHttpService {
     return this.httpClient.put(this.url + "/" + resource.id, JSON.stringify(body))
       .pipe(
         map(response => {
-          console.log('update', response);
+          console.log('updated', response);
           response['updated'] = 'UPD';
           return response;
         }),
+        catchError(this.handleError));
+  }
+
+  delete(resource) {
+    console.log('deleting url', this.url + "/" + resource.id);
+    return this.httpClient.delete(this.url + "/" + resource.id)
+      .pipe(
+        response => response,
         catchError(this.handleError));
   }
 

@@ -60,6 +60,23 @@ export class DemoHttpComponent implements OnInit {
         error => this.handleError(error))
   }
 
+  deletePost(post) {
+    // optimistic delete: delete post before http response
+    let index = this.posts.indexOf(post);
+    this.posts.splice(index, 1);
+
+    this.postService.delete(post)
+      .subscribe(
+        deletedPost => console.log(deletedPost), 
+        error => {
+          // rollback delete if any error occurs
+          this.posts.splice(index, 0, post);
+          console.log('rollback on post', post);
+
+          this.handleError(error);
+        })
+  }
+
   private handleError(error) {
     if (error instanceof BadRequest) {
       alert('Bad Request: ');

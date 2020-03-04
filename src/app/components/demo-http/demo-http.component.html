@@ -1,9 +1,35 @@
-<input (keyup.enter)="addPost(post)" #post type="text" class="form-control">
+
+<div style="max-width: 70%;">
+    <span>
+        <label for="titleId">Add a post</label>
+        <input id="titleId" (keyup.enter)="addPost(post)" #post type="text" class="form-control">
+    </span>    
+</div>
 <br>
-<ul class="list-group">
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of posts">
+            <td>
+                {{ post.title }} 
+                &nbsp; <span style="background-color: red; color: grey;">{{ post.updated }}</span> 
+            </td>
+            <td><button class="btn btn-primary" (click)="updatePost(post)">Update</button></td>
+            <td><button class="btn btn-secondary" (click)="deletePost(post)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+<!-- <ul class="list-group">
     <li *ngFor="let post of posts" class="list-group-item">
         {{ post.title }}
         &nbsp; <span style="background-color: red; color: grey;">{{ post.updated }}</span> 
         &nbsp; <button class="btn btn-primary" (click)="updatePost(post)">Update</button>
+        &nbsp; <button class="btn btn-secondary" (click)="deletePost(post)">Delete</button>
     </li>
-</ul>
+</ul> -->
