@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DemoHttpService } from 'src/app/services/demo-http.service';
-import { AppError } from 'src/app/models/app-error';
 import { BadRequest } from 'src/app/models/bad-request';
 import { NotFound } from 'src/app/models/not-found';
+import { DemoHttpService } from 'src/app/services/demo-http.service';
 
 @Component({
   selector: 'app-demo-http',
