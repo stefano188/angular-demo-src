@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators'
 import { throwError } from 'rxjs';
 import { AppError } from '../models/app-error';
-import { error } from 'protractor';
 import { BadRequest } from '../models/bad-request';
 import { NotFound } from '../models/not-found';
 
@@ -13,6 +12,7 @@ import { NotFound } from '../models/not-found';
 export class DemoHttpService {
 
   private url = 'https://jsonplaceholder.typicode.com/posts';
+  private fakeDeleteUrl = 'https://jsonplaceholder.typicode.com/posts/345';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -20,8 +20,26 @@ export class DemoHttpService {
     return this.httpClient.get(this.url)
       .pipe(
         map(result => result as []), 
-        catchError(this.handleError)
-      );
+        catchError(this.handleError));
+  }
+
+  create(resource) {
+    return this.httpClient.post(this.url, JSON.stringify(resource))
+      .pipe(
+        map(response => response),
+        catchError(this.handleError));
+  }
+
+  update(resource, body) {
+    console.log('updating url', this.url + "/" + resource.id);
+    return this.httpClient.put(this.url + "/" + resource.id, JSON.stringify(body))
+      .pipe(
+        map(response => {
+          console.log('update', response);
+          response['updated'] = 'UPD';
+          return response;
+        }),
+        catchError(this.handleError));
   }
 
   private handleError(error: Response) {
@@ -32,4 +50,5 @@ export class DemoHttpService {
     } 
     return throwError(new AppError(error));
   }
+
 }

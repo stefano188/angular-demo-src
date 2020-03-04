@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DemoHttpService } from 'src/app/services/demo-http.service';
 import { AppError } from 'src/app/models/app-error';
+import { BadRequest } from 'src/app/models/bad-request';
+import { NotFound } from 'src/app/models/not-found';
 
 @Component({
   selector: 'app-demo-http',
@@ -14,23 +16,58 @@ export class DemoHttpComponent implements OnInit {
   constructor(private postService: DemoHttpService) { }
 
   ngOnInit() {
-    this.postService.getAll()
-      .subscribe(
-        result => this.posts = result, 
-        error => {
-          if (error instanceof AppError) {
-            alert('Unexpected error occured: ' + (error as any).originalError.message)
-          }
-          console.log(error)
-        });
-    /* 
-    this.postService.getAll()
-      .subscribe(result => {
-      console.log('results', result);
-      // this.posts = result;
-      // console.log('posts', this.posts);
-    });
-    */
+    this.popuplatePosts();
   }
 
+  popuplatePosts() {
+    this.postService.getAll()
+    .subscribe(
+      result => this.posts = result, 
+      error => this.handleError(error)
+      );
+  }
+
+  addPost(input: HTMLInputElement) {
+    let post = { title: input.value }
+    input.value = '';
+
+    // optimistic update: add post before http response
+    this.posts.splice(0,0, post);
+
+    this.postService.create(post)
+      .subscribe(
+        newPost => {
+          console.log('create result', newPost);
+          console.log('result["id"]' , newPost['id']);
+        
+          post['id'] = newPost['id'];
+          console.log('added post', post);
+          // pessimistic update: add post after http response
+          // this.posts.splice(0,0, post);
+      },
+        error => {
+          this.handleError(error);
+          this.posts.splice(0,1);
+        })
+  }
+
+  updatePost(post) {
+    this.postService.update(post, { isRead: true })
+      .subscribe(
+        updatedPost => {
+          post['updated'] = updatedPost['updated'];
+        },
+        error => this.handleError(error))
+  }
+
+  private handleError(error) {
+    if (error instanceof BadRequest) {
+      alert('Bad Request: ');
+    } else if (error instanceof NotFound) {
+      alert('Not Found. This post does not exist: ');
+    } else {
+      alert('Unexpected error occured: ' + (error as any).originalError.message)
+    }
+    console.log(error);
+  }
 }
