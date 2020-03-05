@@ -1,0 +1,16 @@
+
+
+# two ways binding [()]
+[(ngModel)]="valueTwo"
+Bind ngModel directive to local 'valueTwo' variable. Requires 'FormsModule' from @angular/forms
+
+
+<custom-input [(value)]="customValue">
+Bind Input/Output 'value' property of CustomInputComponent to local 'customValue' variable.
+
+
+<input type="text" #var1 (keyup)="0">
+#var1 is the template variable for input field. 
+(keyup)="0" This is needed by Angular to update the view. 
+Angular needs to bind to an event that does nothing "0"
+

@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { DemoInputComponent } from './components/input/demo-input/demo-input.component';
 import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
-import { SummaryPipe } from './components/summary.pipe';
+import { SummaryPipe } from './components/pipe-demo/summary.pipe';
 import { CustomInputComponent } from './components/input/custom-input/custom-input.component';
 import { CustomOutputComponent } from './components/output/custom-output/custom-output.component';
 import { DemoOutputComponent } from './components/output/demo-output/demo-output.component';

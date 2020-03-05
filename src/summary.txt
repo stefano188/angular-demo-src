@@ -56,4 +56,24 @@ https://angular.io/guide/user-input
 (keyup.enter)
 ...
 
+
 ******************************************
+Superclass Injectable
+
+DemoHttpService extends DataService
+
+// @Injectable({
+//   providedIn: 'root'
+// })
+export class DataService { 
+    ....
+}
+
+ng build --prod 
+ERROR in Error: Internal error: unknown identifier []
+    at Object.importExpr$1 [as importExpr] (/Users/stemazz/Angular/git/angular-demo-src/node_modules/@angular/compiler/bundles/compiler.umd.js:25630:27)
+
+Cannot make superclass injectable
+
+https://github.com/angular/angular-cli/issues/11359
+

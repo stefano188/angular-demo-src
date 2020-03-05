@@ -7,9 +7,9 @@
             minlength="3"
             maxlength="7"
             pattern="apple"
-            ngModel
-            name="firstName"
             
+            ngModel
+            name="firstNameControlObject"    
             #firstName="ngModel"
             (change)="log(firstName)"
             
@@ -29,17 +29,30 @@
             </div>
         </div>
     </div>
-    <div ngModelGroup="contact" #contact="ngModelGroup">
+    <div ngModelGroup="contactGroup" #contact="ngModelGroup">
         <div class="form-group">
             <label for="phone">Phone Number</label>
             <input 
+                required
+                minlength="8"
+                maxlength="10"
                 
                 ngModel
-                name="phone"
+                name="phoneControlObject"
+                #phone="ngModel"
     
                 id="phone" 
                 type="text" 
                 class="form-control">
+                
+        </div>
+        <div *ngIf="contact.touched && contact.invalid" class="alert alert-danger">
+            <div *ngIf="phone.errors.required">
+                Phone number is required
+            </div>
+            <div *ngIf="phone.errors.minlength">
+                Phone number should be minimum {{ phone.errors.minlength.requiredLength }} characters
+            </div>
         </div>
     </div>
     <div class="form-group">
@@ -81,7 +94,8 @@
             type="text" 
             class="form-control">
     </div>
-    <button [disabled]="f.invalid" class="btn btn-primary">Submit</button>
+    <!--[disabled]="f.invalid"-->
+    <button  class="btn btn-primary">Submit</button>
     <br/>
     {{ f.value | json }}
 </form>

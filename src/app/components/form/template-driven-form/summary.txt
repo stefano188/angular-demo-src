@@ -1,0 +1,47 @@
+
+<input 
+    # template validation
+    required
+    minlength="3"
+    maxlength="7"
+    pattern="apple"
+    
+    # ngModel: directive that creates a Form Control Object for this input field
+    # "firstNameControlObject" name is required by ngModel directive and it gives the name of the Form Control Object property
+    # #firstName is the template variable bound to ngModel directive. It gives access to check for field validation
+    ngModel
+    name="firstNameControlObject"
+    #firstName="ngModel"
+    (change)="log(firstName)"
+    
+    id="firstName" 
+    type="text" 
+    class="form-control">
+
+# firstName.touched && ... firstName is the template variable of the input field
+<div class="alert alert-danger" *ngIf="firstName.touched && firstName.invalid">
+    <div *ngIf="firstName.errors.required">First Name is required</div>
+    <div *ngIf="firstName.errors.minlength">
+        First Name should be minumum {{ firstName.errors.minlength.requiredLength }} characters
+    </div>
+....
+
+# ngModelGroup: directive that creates a Form Group Object with 'contactGroup' as property name
+# #contact defines a template variable and bind to ngModelGroup directive. It gives access to this form group for validation
+<div ngModelGroup="contactGroup" #contact="ngModelGroup">
+    <div class="form-group">
+        <input 
+            required
+            minlength="8"
+            maxlength="10"
+            
+            # #phone is the template variable used to check for validation
+            # "phoneControlObject" is the name of the Form Control Object property in the "contactGroup" Form Group Object
+            ngModel
+            name="phoneControlObject"
+            #phone="ngModel"
+....
+<div *ngIf="contact.touched && contact.invalid" class="alert alert-danger">
+    <div *ngIf="phone.errors.required">
+        Phone number is required
+....
