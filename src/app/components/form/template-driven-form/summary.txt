@@ -1,4 +1,13 @@
 
+Demo on Template Driven Form
+'Form Control' and 'Form Group' Objects created via template via 'ngModel' and 'ngModelGroup' directives
+
+# #f is the template variable bound to 'ngForm' directive
+# (ngSubmit) is the event called when submitting the form. 
+# submit(f) is the method called when the form is submitted
+<form #f="ngForm" (ngSubmit)="submit(f)">
+
+
 <input 
     # template validation
     required
@@ -7,8 +16,9 @@
     pattern="apple"
     
     # ngModel: directive that creates a Form Control Object for this input field
-    # "firstNameControlObject" name is required by ngModel directive and it gives the name of the Form Control Object property
-    # #firstName is the template variable bound to ngModel directive. It gives access to check for field validation
+    # 'firstNameControlObject' name is required by ngModel directive and it gives the name of the Form Control Object property
+    # #firstName is the template variable bound to ngModel directive. It gives access to this input field. 
+    #   Used to check for field validation in div class="alert alert-danger"
     ngModel
     name="firstNameControlObject"
     #firstName="ngModel"
@@ -19,6 +29,7 @@
     class="form-control">
 
 # firstName.touched && ... firstName is the template variable of the input field
+# when the field is invalid, angular fills the errors object of this input field (otherwise it is null). see console.log
 <div class="alert alert-danger" *ngIf="firstName.touched && firstName.invalid">
     <div *ngIf="firstName.errors.required">First Name is required</div>
     <div *ngIf="firstName.errors.minlength">
@@ -27,7 +38,7 @@
 ....
 
 # ngModelGroup: directive that creates a Form Group Object with 'contactGroup' as property name
-# #contact defines a template variable and bind to ngModelGroup directive. It gives access to this form group for validation
+# #contact defines a template variable that is bound to ngModelGroup directive. It gives access to this form group for validation
 <div ngModelGroup="contactGroup" #contact="ngModelGroup">
     <div class="form-group">
         <input 

@@ -1,5 +1,10 @@
 
 ******************************************
+Lifecycle Hooks
+https://angular.io/guide/lifecycle-hooks
+
+
+******************************************
 # two ways binding [()]
 https://medium.com/@ofirrifo/custom-angular-component-using-two-way-data-binding-aka-banana-in-a-box-syntax-9eb06b8cfb09
 https://dzone.com/articles/understanding-output-and-eventemitter-in-angular

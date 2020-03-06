@@ -1,0 +1,84 @@
+
+Demo on Reactive Forms
+'Form Control' and 'Form Group' Objects are created in the component .ts programmatically. 
+A little bit longer approach but very powerful with custom validation.
+
+It requires ReactiveFormsModule from @angular/forms in AppModule
+
+# [formGroup]: the formGroup object is bound to the 'form' variable declared in the component .ts
+# #f is the template variable bound to ngForm directive
+# (ngSubmit) is the event called when submitting the form ("login()" method called).
+<form [formGroup]="form" #f="ngForm" (ngSubmit)="login()">
+    # form.errors: check if the form has errors accessing to the component variable 'form'
+    <div *ngIf="form.errors" class="alert alert-danger">
+        Username or password invalid
+    </div>
+
+
+# component typescript .ts
+# The Form Group Object is created in the components .ts
+# The 'FormGroup' class takes:
+    @param controls — A collection of child controls. The key for each child is the name under which it is registered.
+    @param validatorOrOpts — A synchronous validator function, or an array of such functions, or an AbstractControlOptions object that contains validation functions and a validation trigger.
+    @param asyncValidator — A single async validator or array of async validator functions
+
+# The 'FormControl' class takes:
+    @param formState — Initializes the control with an initial value, or an object that defines the initial value and disabled state.
+    @param validatorOrOpts — A synchronous validator function, or an array of such functions, or an AbstractControlOptions object that contains validation functions and a validation trigger.
+    @param asyncValidator — A single async validator or array of async validator functions
+
+# 'username' Form Control Object with 
+    2nd param: two built-in Validator (required, minLength) and UsernameValidators.cannotContainSpace as synchronous validators
+    3rd param: UsernameValidators.shouldBeUnique as an asynchronous validator
+# 'password' Form Control Object
+# 'info' Form Group Object with 
+    identity Form Control Object
+    drivingLicense Form Control Object
+
+form = new FormGroup(
+    {
+      username: new FormControl('', 
+        [
+          Validators.required,
+          Validators.minLength(3),
+          UsernameValidators.cannotContainSpace
+        ], 
+        UsernameValidators.shouldBeUnique),
+      password: new FormControl('', Validators.required),
+      info: new FormGroup(
+        {
+          identity: new FormControl(),
+          drivingLicense: new FormControl()
+        }
+      )
+    }
+  );
+
+# see username.validators.ts for custom validation 
+    synchronous return ValidationErrors
+    asynchronous: return Promise of ValidationErrors
+
+
+# getter to provide access to the 'username' form control object. Useful to access this field for check validation errors
+    Otherwise in the template it should have been written 'f.get('username') ... all the times
+get username() {
+    return this.form.get('username');
+}
+....
+# getter to provide access to the 'identity' form control object. (See comment above)
+get identity() {
+    return this.form.get('info.identity');
+}
+....
+
+
+template.html
+
+# formControlName: directive that register input field with the Form Control Object created programmatically
+  <input 
+    formControlName="username"
+    ....
+
+# check for asynchronous validation pending operations
+<div *ngIf="username.pending">Checking for uniqueness...</div>
+

@@ -17,7 +17,18 @@ export class DemoChangePasswordComponent implements OnInit {
       oldPassword: ['', Validators.required, PasswordValidators.validOldPassword],
       newPassword: ['', Validators.required],
       confirmPassword: ['', Validators.required],
-    }, { validators: PasswordValidators.shouldMatch } )
+    }, { 
+        validators: PasswordValidators.shouldMatch, 
+        asyncValidators: PasswordValidators.randomSystemUnavailable 
+      })
+  }
+
+  changePwd(f) {
+    console.log('form', f);
+  }
+
+  logForm(f) {
+    console.log('form', f);
   }
 
   get oldPassword() {

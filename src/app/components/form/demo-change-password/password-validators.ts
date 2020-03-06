@@ -1,4 +1,5 @@
 import { AbstractControl } from '@angular/forms';
+import { resolve } from 'url';
 
 export class PasswordValidators {
 
@@ -18,5 +19,18 @@ export class PasswordValidators {
         if (newPassword === confirmPassword) return null;
 
         return { passwordShouldMatch: true }
+    }
+
+    static randomSystemUnavailable(control: AbstractControl) {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                let n = Math.round(Math.random() * 1000) % 2;
+                console.log('random', n);
+                if (n === 1) 
+                    resolve({ raiseError: true })
+                else
+                    resolve(null);
+            }, 2000)
+        });
     }
 }
