@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'angular-demo-src';
   link;
 
@@ -18,5 +18,10 @@ export class AppComponent implements OnInit {
     this.link = n;
     localStorage.setItem('linknum', n.toString());
   }
+
+  ngOnDestroy() {
+    localStorage.removeItem('linknum');
+  }
+  
 }
 

@@ -1,0 +1,16 @@
+
+
+<ng-container *ngIf="statelessCourses$ | async as courses">
+
+    <div class="card" style="width: 18rem;" *ngFor="let course of courses" >
+        <img class="card-img-top" [src]="course.iconUrl" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ course.description }}</h5>
+          <p class="card-text">{{ course.longDescription }}</p>
+          <a routerLink="/reactive-courses" class="btn btn-primary">View Details</a>
+          <!-- or [routerLink] binding -->
+          <!-- <a [routerLink]="['/reactive-courses']" class="btn btn-primary">View Details</a> -->
+        </div>
+    </div>
+
+</ng-container>

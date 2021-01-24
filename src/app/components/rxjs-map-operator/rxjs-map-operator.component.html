@@ -1,0 +1,50 @@
+
+<fieldset class="border p-2">
+    <legend class="w-auto">Mutually exclusive Observables</legend>
+    <ul class="obs">
+        <li><button #btn1 class="btn btn-primary" (click)="startObs1()">Start Observable 1</button></li>
+        <li>
+            <ng-container *ngIf="obsBtn1$ | async as counter1; else counter0">
+                <span class="counter">{{counter1 || 0}}</span>
+            </ng-container>
+            <ng-template #counter0>0</ng-template>
+        </li>
+    </ul>
+
+    <ul class="obs">
+        <li><button #btn2 class="btn btn-primary" (click)="startObs2()">Start Observable 2</button></li>
+        <li>
+            <ng-container *ngIf="obsBtn2$ | async as counter2; else counter0">
+                <span class="counter2">{{counter2 || 0}}</span>
+            </ng-container>
+            <ng-template #counter0>0</ng-template>
+        </li>
+    </ul>
+</fieldset>
+<br>
+<fieldset class="border p-2">
+    <legend class="w-auto">SwitchMap Countdown sample</legend>
+    <h4>
+        Time remaining: <span id="remaining">{{timer$ | async}}</span>
+    </h4>
+    <ul class="obs">
+        <li><button class="btn btn-primary" id="pause">Pause Timer</button></li>
+        <li><button class="btn btn-primary" id="resume" (click)="switchMapCountdownSample()">Resume Timer</button></li>
+    </ul>
+</fieldset>
+<br>
+<!--
+<fieldset class="border p-2">
+    <legend class="w-auto">SwitchMap vs MergeMap</legend>
+    <ul class="obs">
+        <li><button class="btn btn-primary" id="btnStart" [disabled]="isStarted()" (click)="startSwMp()">Start</button></li>
+        <li><button class="btn btn-primary" id="btnSwitchMap" [disabled]="!isStarted()" (click)="switchTo()">SwitchMap</button></li>
+        <li><span>{{swMapValue}}</span></li>
+        <li><span>{{swMapValueSwitched}}</span></li>
+    </ul>
+    <ul class="obs">
+        <li><button class="btn btn-primary" id="btnMergeMap">MergeMap</button></li>
+        <li>{{value}}</li>
+    </ul>
+</fieldset>
+-->

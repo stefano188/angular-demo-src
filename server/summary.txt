@@ -1,0 +1,37 @@
+
+https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+
+The presence of a tsconfig.json file in a directory indicates that the directory is the root of a TypeScript project. 
+The tsconfig.json file specifies the root files and the compiler options required to compile the project.
+
+    npm i express
+    npm i @types/express --save-dev
+    npm i body-parser
+
+
+
+******************************************
+Regenerate node_modules/.bin with symbolic links
+
+    npm rebuild
+
+
+
+Object.values()
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+
+
+# Configure build environment (development, production, proxy, ...)
+https://angular.io/guide/build
+
+https://medium.com/@valeriocomo/angular-api-proxy-4ce138c6ca50
+
+
+******************************************
+Troubleshooting
+server/courses.ts(10,47): error TS2339: Property 'values' does not exist on type 'ObjectConstructor'
+
+    added 
+        "target": "es2017"
+    to server.tsconfig.json

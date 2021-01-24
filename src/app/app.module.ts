@@ -26,6 +26,11 @@ import { DemoFormArrayComponent } from './components/form/demo-form-array/demo-f
 import { DemoChangePasswordComponent } from './components/form/demo-change-password/demo-change-password.component';
 import { DemoHttpComponent } from './components/demo-http/demo-http.component';
 import { DemoHttpService } from './services/demo-http.service';
+import { CourseListComponent } from './components/course-list/course-list.component';
+import { CourseCardComponent } from './components/course-card/course-card.component';
+import { ObservableCoursesComponent } from './components/courses/observable-courses/observable-courses.component';
+import { StoreCoursesComponent } from './components/courses/store-courses/store-courses.component';
+import { RxjsMapOperatorComponent } from './components/rxjs-map-operator/rxjs-map-operator.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,12 @@ import { DemoHttpService } from './services/demo-http.service';
     SignupFormComponent,
     DemoFormArrayComponent,
     DemoChangePasswordComponent,
-    DemoHttpComponent
+    DemoHttpComponent,
+    CourseListComponent,
+    CourseCardComponent,
+    ObservableCoursesComponent,
+    StoreCoursesComponent,
+    RxjsMapOperatorComponent
     
   ],
   imports: [
@@ -87,6 +97,15 @@ import { DemoHttpService } from './services/demo-http.service';
       },
       {
         path: 'demo-http', component: DemoHttpComponent
+      },
+      {
+        path: 'observable-courses', component: ObservableCoursesComponent
+      },
+      {
+        path: 'store-courses', component: StoreCoursesComponent
+      },
+      {
+        path: 'rxjs-map-operator', component: RxjsMapOperatorComponent
       },
       {
         path: '', component: PipeDemoComponent

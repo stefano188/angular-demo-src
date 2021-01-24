@@ -1,0 +1,10 @@
+
+.nav-link {
+    white-space: nowrap;
+}
+
+.tab-content {
+    position: relative;
+    width: 80%;
+    left: 10%;
+}

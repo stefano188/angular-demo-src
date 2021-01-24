@@ -1,0 +1,21 @@
+
+.obs li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.counter {
+    color: #15a12d;
+    font: bold;
+}
+
+.counter2 {
+    color: #1d2fd4;
+    font: bold;
+}
+
+.w-auto {
+    font-size: 13px;
+}
