@@ -1,0 +1,11 @@
+
+:host {
+    background: white;
+    border-color: lightgrey;
+}
+
+:host(.input-focus) {
+    border: 1px solid #4d90fe;
+    -webkit-box-shadow: 0px 0px 5px #4d90fe;
+    box-shadow: 0px 0px 5px #4d90fe;
+}

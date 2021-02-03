@@ -1,0 +1,25 @@
+
+$border-color: red;
+
+:host-context(.au-fa-input-red-theme) {
+    border-color: $border-color;
+
+    /* & sass syntax => the same as :host-context(.au-fa-input-red-theme).input-focus */
+    &.input-focus {
+      -webkit-box-shadow: 0px 0px 5px $border-color;
+      box-shadow: 0px 0px 5px $border-color;   
+    }
+}
+
+
+/* target the element that is part of the host element */
+/* :host-context(.au-fa-input-red-theme).input-focus {
+    -webkit-box-shadow: 0px 0px 5px $border-color;
+    box-shadow: 0px 0px 5px $border-color;   
+} */
+
+/* target an element inside the component */
+/* :host-context(.au-fa-input-red-theme) .input-focus {
+    -webkit-box-shadow: 0px 0px 5px red;
+    box-shadow: 0px 0px 5px red;   
+} */

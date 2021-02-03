@@ -31,6 +31,10 @@ import { CourseCardComponent } from './components/course-card/course-card.compon
 import { ObservableCoursesComponent } from './components/courses/observable-courses/observable-courses.component';
 import { StoreCoursesComponent } from './components/courses/store-courses/store-courses.component';
 import { RxjsMapOperatorComponent } from './components/rxjs-map-operator/rxjs-map-operator.component';
+import { ModalComponent } from './au-lab/modal/modal/modal.component';
+import { AuModalComponent } from './au-lab/modal/au-modal/au-modal.component';
+import { AppAuInputComponent } from './au-lab/app/app-au-input.component';
+import { AuInputModule } from './au-lab/lib/au-input.module';
 
 @NgModule({
   declarations: [
@@ -58,7 +62,10 @@ import { RxjsMapOperatorComponent } from './components/rxjs-map-operator/rxjs-ma
     CourseCardComponent,
     ObservableCoursesComponent,
     StoreCoursesComponent,
-    RxjsMapOperatorComponent
+    RxjsMapOperatorComponent,
+    ModalComponent,
+    AuModalComponent,
+    AppAuInputComponent,
     
   ],
   imports: [
@@ -67,6 +74,7 @@ import { RxjsMapOperatorComponent } from './components/rxjs-map-operator/rxjs-ma
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AuInputModule,
     RouterModule.forRoot([
       {
         path: 'demo-pipe', component: PipeDemoComponent
@@ -106,6 +114,12 @@ import { RxjsMapOperatorComponent } from './components/rxjs-map-operator/rxjs-ma
       },
       {
         path: 'rxjs-map-operator', component: RxjsMapOperatorComponent
+      },
+      {
+        path: 'au-input-component', component: AppAuInputComponent
+      },
+      {
+        path: 'modal-popup', component: ModalComponent
       },
       {
         path: '', component: PipeDemoComponent

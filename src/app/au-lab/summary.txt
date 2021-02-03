@@ -1,0 +1,27 @@
+
+@HostBinding
+https://angular.io/api/core/HostBinding
+
+
+@HostListener
+https://angular.io/api/core/HostListener
+
+
+
+https://dev.to/stefaniefluin/how-to-structure-scss-in-an-angular-app-3376
+add scss to angular project
+ng config schematics.@schematics/angular:component.styleext scss
+
+or manually add to angular.json
+  "defaultProject": "angular-demo-src",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
+
+IMPORTANT:
+the component that includes a sass style has to include a sass file in styleUrls
+styleUrls: ['./au-fa-input.component.scss']
+otherwise scss style will be ignored.
+

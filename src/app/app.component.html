@@ -107,6 +107,22 @@
             data-toggle="pill"  
             role="tab"  
             aria-selected="false">RxJs Operators</a>
+          <a 
+            (click)="toggleActive(14)"
+            routerLink="au-input-component" 
+            class="nav-link" 
+            [class.active]="link === 14"
+            data-toggle="pill"  
+            role="tab"  
+            aria-selected="false">AU FA Input</a>
+          <a 
+            (click)="toggleActive(15)"
+            routerLink="modal-popup" 
+            class="nav-link" 
+            [class.active]="link === 15"
+            data-toggle="pill"  
+            role="tab"  
+            aria-selected="false">Modal Popup</a>
             
         <!-- <a class="nav-link" data-toggle="pill"  role="tab"  aria-selected="false">Messages</a>
         <a class="nav-link" data-toggle="pill"  role="tab" aria-selected="false">Settings</a> -->
