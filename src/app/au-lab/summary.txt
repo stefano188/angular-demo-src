@@ -25,3 +25,10 @@ the component that includes a sass style has to include a sass file in styleUrls
 styleUrls: ['./au-fa-input.component.scss']
 otherwise scss style will be ignored.
 
+
+Keyboard events
+<input (keydown.enter)="...">
+<input (keydown.esc)="...">
+...
+https://www.digitalocean.com/community/tutorials/angular-binding-keyup-keydown-events
+

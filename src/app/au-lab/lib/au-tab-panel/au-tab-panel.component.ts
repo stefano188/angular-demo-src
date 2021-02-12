@@ -20,10 +20,10 @@ export class AuTabPanelComponent implements OnInit, AfterContentInit {
   }
   
   ngAfterContentInit() {
-    console.log(this.tabs);
-    this.tabs.forEach(tab => {
-      console.log(tab.title);
-    });
+    // console.log(this.tabs);
+    // this.tabs.forEach(tab => {
+    //   console.log(tab.title);
+    // });
 
     const selectedTab = this.tabs.find(tab => tab.selected);
     if (!selectedTab && this.tabs.first) {

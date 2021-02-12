@@ -31,10 +31,9 @@ import { CourseCardComponent } from './components/course-card/course-card.compon
 import { ObservableCoursesComponent } from './components/courses/observable-courses/observable-courses.component';
 import { StoreCoursesComponent } from './components/courses/store-courses/store-courses.component';
 import { RxjsMapOperatorComponent } from './components/rxjs-map-operator/rxjs-map-operator.component';
-import { ModalComponent } from './au-lab/modal/modal/modal.component';
-import { AuModalComponent } from './au-lab/modal/au-modal/au-modal.component';
 import { AppAuInputComponent } from './au-lab/app/app-au-input.component';
 import { AuInputModule } from './au-lab/lib/au-input.module';
+import { AppModalComponent } from './au-lab/app-modal/app-modal.component';
 
 @NgModule({
   declarations: [
@@ -63,9 +62,8 @@ import { AuInputModule } from './au-lab/lib/au-input.module';
     ObservableCoursesComponent,
     StoreCoursesComponent,
     RxjsMapOperatorComponent,
-    ModalComponent,
-    AuModalComponent,
     AppAuInputComponent,
+    AppModalComponent,
     
   ],
   imports: [
@@ -119,7 +117,7 @@ import { AuInputModule } from './au-lab/lib/au-input.module';
         path: 'au-input-component', component: AppAuInputComponent
       },
       {
-        path: 'modal-popup', component: ModalComponent
+        path: 'modal-popup', component: AppModalComponent
       },
       {
         path: '', component: PipeDemoComponent
