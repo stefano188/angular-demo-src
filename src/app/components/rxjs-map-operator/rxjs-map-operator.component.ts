@@ -14,9 +14,9 @@ export class RxjsMapOperatorComponent implements OnInit, AfterViewInit {
   @ViewChild('btn1', {read: ElementRef, static: false}) btn1: ElementRef<any>;
   @ViewChild('btn2', {read: ElementRef, static: false}) btn2: ElementRef<any>;
 
-  subscrBtn1: Subscription;
-  subscrBtn2: Subscription;
-  subscrBtn3: Subscription;
+  // subscrBtn1: Subscription;
+  // subscrBtn2: Subscription;
+  // subscrBtn3: Subscription;
 
   obsBtn1$: Observable<any>;
   obsBtn2$: Observable<any>;

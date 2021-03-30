@@ -123,6 +123,15 @@
             data-toggle="pill"  
             role="tab"  
             aria-selected="false">Modal Popup</a>
+          <a 
+            (click)="toggleActive(16)"
+            routerLink="input-mask-demo" 
+            class="nav-link" 
+            [class.active]="link === 16"
+            data-toggle="pill"  
+            role="tab"  
+            aria-selected="false">Input Mask Demo</a>
+
             
         <!-- <a class="nav-link" data-toggle="pill"  role="tab"  aria-selected="false">Messages</a>
         <a class="nav-link" data-toggle="pill"  role="tab" aria-selected="false">Settings</a> -->

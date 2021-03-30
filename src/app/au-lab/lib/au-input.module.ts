@@ -6,6 +6,7 @@ import { AuTabPanelComponent } from './au-tab-panel/au-tab-panel.component';
 import { AuTabComponent } from './au-tab/au-tab.component';
 import { AuModalComponent } from './au-modal/au-modal.component';
 import { AuModalOpenOnClickDirective } from './au-modal/au-modal-open-on-click.directive';
+import { AuMaskDirective } from './au-mask/au-mask.directive';
 
 
 
@@ -16,7 +17,9 @@ import { AuModalOpenOnClickDirective } from './au-modal/au-modal-open-on-click.d
     AuTabPanelComponent, 
     AuTabComponent, 
     AuModalComponent, 
-    AuModalOpenOnClickDirective],
+    AuModalOpenOnClickDirective, 
+    AuMaskDirective
+  ],
   imports: [
     CommonModule
   ],
@@ -26,6 +29,8 @@ import { AuModalOpenOnClickDirective } from './au-modal/au-modal-open-on-click.d
     AuTabPanelComponent, 
     AuTabComponent,
     AuModalComponent,
-    AuModalOpenOnClickDirective]
+    AuModalOpenOnClickDirective,
+    AuMaskDirective
+  ]
 })
 export class AuInputModule { }

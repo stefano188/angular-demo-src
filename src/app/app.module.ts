@@ -34,6 +34,8 @@ import { RxjsMapOperatorComponent } from './components/rxjs-map-operator/rxjs-ma
 import { AppAuInputComponent } from './au-lab/app/app-au-input.component';
 import { AuInputModule } from './au-lab/lib/au-input.module';
 import { AppModalComponent } from './au-lab/app-modal/app-modal.component';
+import { AppAuMaskComponent } from './au-lab/app/app-au-mask/app-au-mask.component';
+
 
 @NgModule({
   declarations: [
@@ -64,6 +66,7 @@ import { AppModalComponent } from './au-lab/app-modal/app-modal.component';
     RxjsMapOperatorComponent,
     AppAuInputComponent,
     AppModalComponent,
+    AppAuMaskComponent,
     
   ],
   imports: [
@@ -118,6 +121,9 @@ import { AppModalComponent } from './au-lab/app-modal/app-modal.component';
       },
       {
         path: 'modal-popup', component: AppModalComponent
+      },
+      {
+        path: 'input-mask-demo', component: AppAuMaskComponent
       },
       {
         path: '', component: PipeDemoComponent
