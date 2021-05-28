@@ -1,0 +1,23 @@
+
+<div class="datePickerDiv">
+
+  <input class="inputDatePicker"
+    type="text" 
+    [name]="name"
+
+    ngbDatepicker 
+    #d="ngbDatepicker" 
+    [(ngModel)]="ngModel"
+
+    (keydown)="onKeyDown()"
+    (ngModelChange)="onValueChange($event)"
+    
+    placeholder="gg/mm/yyyy"
+  />
+
+  <button style="margin: 5px;" class="btn btn-secondary" (click)="d.toggle()">Pick</button>
+</div>
+
+<button style="margin: 5px;" class="btn btn-primary" (click)="submit()">Submit</button>
+<p>{{dateValue | json}}</p>
+

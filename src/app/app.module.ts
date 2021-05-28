@@ -35,6 +35,10 @@ import { AppAuInputComponent } from './au-lab/app/app-au-input.component';
 import { AuInputModule } from './au-lab/lib/au-input.module';
 import { AppModalComponent } from './au-lab/app-modal/app-modal.component';
 import { AppAuMaskComponent } from './au-lab/app/app-au-mask/app-au-mask.component';
+import { DatePickerComponent } from './components/input/date-picker/date-picker.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { InputMaskDirective } from './input-mask.directive';
+import { ReactiveFormComponent } from './components/form/reactive-form/reactive-form.component';
 
 
 @NgModule({
@@ -67,6 +71,9 @@ import { AppAuMaskComponent } from './au-lab/app/app-au-mask/app-au-mask.compone
     AppAuInputComponent,
     AppModalComponent,
     AppAuMaskComponent,
+    DatePickerComponent,
+    InputMaskDirective,
+    ReactiveFormComponent,
     
   ],
   imports: [
@@ -76,6 +83,7 @@ import { AppAuMaskComponent } from './au-lab/app/app-au-mask/app-au-mask.compone
     ReactiveFormsModule,
     HttpClientModule,
     AuInputModule,
+    NgbModule,
     RouterModule.forRoot([
       {
         path: 'demo-pipe', component: PipeDemoComponent

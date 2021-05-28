@@ -1,0 +1,21 @@
+
+<form [formGroup]="fg" #f (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="name"></label>
+        <input id="name" type="text" formControlName="firstName">
+    </div>
+
+    <div>
+        <label for="surname"></label>
+        <input id="surname" type="text" formControlName="lastName">
+    </div>
+
+    <div>
+        <label for="date"></label>
+        <input id="date" type="text" formControlName="dateField">
+    </div>
+
+
+</form>
+<p>{{f.value | json}}</p>
