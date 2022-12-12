@@ -23,7 +23,7 @@
     "@ng-bootstrap/ng-bootstrap": "~5.2.2",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "lodash.findindex": "^4.6.0",
     "lodash.findlastindex": "^4.6.0",
     "lodash.includes": "^4.3.0",
